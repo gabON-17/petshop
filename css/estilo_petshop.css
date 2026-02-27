@@ -19,7 +19,7 @@ ul.menu {                   /* Estiliza a lista com a classe menu */
   background: #212121;      /* Fundo preto/cinza escuro */
   padding: 15px;            /* Espaço interno */
   list-style: none;         /* Remove os marcadores da lista */
-  text-align: left;         /* Alinha o menu à esquerda */
+  text-align: center;         /* Alinha o menu à esquerda */
   border-radius: 5px;       /* Arredonda levemente as bordas */
 }
 
