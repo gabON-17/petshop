@@ -1,142 +1,454 @@
-body {                      /* Estiliza o corpo da página */
-  background: #fff9c4;      /* Define a cor de fundo (amarelo claro) */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte padrão */
-  font-size: 18px;          /* Define o tamanho base da fonte */
-  margin: 0;                /* Remove a margem externa padrão do navegador */
-  padding: 20px;            /* Cria espaçamento interno ao redor do conteúdo */
+/* 
+  Estilo Institucional Moderno - PetShop 
+  Cores Claras e Layout Responsivo
+*/
+
+:root {
+  --cor-primaria: #2cabb1;      /* Verde água/Ciano agradável */
+  --cor-primaria-hover: #228b90;
+  --cor-fundo: #f4f7f6;         /* Cinza bem claro (quase branco) */
+  --cor-fundo-cartao: #ffffff;
+  --cor-texto: #4b5563;         /* Cinza escuro para boa leitura */
+  --cor-texto-titulo: #1f2937;
+  --cor-borda: #e5e7eb;
 }
 
-h2 {                        /* Estiliza todos os títulos h2 */
-  background: #4a148c;      /* Cor de fundo roxa escura */
-  color: white;             /* Cor do texto branca */
-  text-align: center;       /* Centraliza o texto */
-  padding: 20px;            /* Espaçamento interno do título */
-  border-radius: 10px;      /* Arredonda os cantos */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave ao redor */
+* {
+  box-sizing: border-box;
 }
 
-ul.menu {                   /* Estiliza a lista com a classe menu */
-  background: #212121;      /* Fundo preto/cinza escuro */
-  padding: 15px;            /* Espaço interno */
-  list-style: none;         /* Remove os marcadores da lista */
-  text-align: left;         /* Alinha o menu à esquerda */
-  border-radius: 5px;       /* Arredonda levemente as bordas */
+body {                      
+  background-color: var(--cor-fundo);
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--cor-texto);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-ul.menu li {                /* Estiliza cada item da lista */
-  display: inline;          /* Coloca os itens na horizontal */
-  margin-right: 25px;       /* Espaço entre os itens */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--cor-texto-titulo);
+  margin-top: 0;
 }
 
-ul.menu li a {              /* Estiliza os links do menu */
-  color: #ffeb3b;           /* Cor amarela para o texto */
-  text-decoration: none;    /* Remove sublinhado */
-  text-transform: uppercase;/* Deixa o texto em maiúsculas */
-  font-weight: bold;        /* Texto em negrito */
-  font-size: 20px;          /* Tamanho da fonte maior */
+a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  transition: color 0.3s ease;
 }
 
-ul.menu li a:hover {        /* Estilo ao passar o mouse */
-  color: white;             /* Muda a cor do texto para branco */
-  border-bottom: 2px solid white; /* Cria uma linha embaixo do link */
+a:hover {
+  color: var(--cor-primaria-hover);
 }
 
-fieldset {                  /* Estiliza o fieldset do formulário */
-  border: 3px solid #4a148c;/* Borda roxa grossa */
-  border-radius: 15px;      /* Bordas arredondadas */
-  background: white;        /* Fundo branco */
-  padding: 25px;            /* Espaçamento interno */
+/* ===============================
+   CABEÇALHO E NAVEGAÇÃO
+   =============================== */
+.cabecalho-site {
+  background-color: var(--cor-fundo-cartao);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-legend {                    /* Estiliza o título do fieldset */
-  font-weight: bold;        /* Texto em negrito */
-  padding: 0 10px;          /* Espaçamento lateral */
-  color: #4a148c;           /* Cor roxa */
+.container-cabecalho {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-input#nome, input#email, input#whatsapp, textarea {                /* Estiliza o input*/
-  width: 95%;               /* Largura quase total */
-  padding: 12px;            /* Espaço interno do campo */
-  font-size: 18px;          /* Tamanho do texto dentro do input */
-  border: 1px solid #ccc;   /* Borda cinza clara */
-  border-radius: 5px;       /* Bordas arredondadas */
+.logo {
+  font-size: 24px;
+  margin: 0;
+  color: var(--cor-primaria);
+  font-weight: 700;
 }
 
-#banner {                   /* Estiliza o elemento com id banner */
-  width: 100%;              /* Ocupa toda a largura do container */
-  height: auto;             /* Mantém a proporção da imagem */
-  border-radius: 15px;      /* Arredonda os cantos */
-  margin-bottom: 20px;      /* Espaço abaixo da imagem */
+.navegacao ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-#rodape{
-  text-align:center; 
-  margin-top:30px; 
-  font-size:14px;	
+.navegacao ul.menu li a {
+  color: var(--cor-texto);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-/* ============================= */
-/* TABELA DE HORÁRIO DE FUNCIONAMENTO */
-/* ============================= */
-
-table.tabela-horario {              /* Estiliza a tabela principal */
-  margin: 40px auto;                /* Centraliza a tabela na página */
-  border-collapse: collapse;       /* Junta as bordas das células */
-  width: 70%;                      /* Largura da tabela */
-  font-family: Arial, sans-serif;  /* Fonte limpa */
-  font-size: 20px;                 /* Fonte maior para leitura */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra para destaque */
-  background-color: #ffffff;       /* Fundo branco */
+.navegacao ul.menu li a:hover,
+.navegacao ul.menu li a.ativo {
+  background-color: #e6f6f7;
+  color: var(--cor-primaria);
 }
 
-table.tabela-horario th {          /* Cabeçalhos da tabela */
-  background-color: #5e2b97;       /* Fundo roxo */
-  color: white;                    /* Texto branco */
-  padding: 14px;                   /* Espaço interno */
-  text-align: center;             /* Centraliza o texto */
+/* ===============================
+   CONTEÚDO PRINCIPAL (MAIN)
+   =============================== */
+.conteudo-principal {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-table.tabela-horario td {          /* Células da tabela */
-  padding: 12px;                   /* Espaço interno */
-  text-align: center;             /* Centraliza o texto */
-  border: 1px solid #ddd;          /* Borda cinza clara */
+/* Hero Section */
+.secao-hero {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  background-color: white;
 }
 
-/* Linhas alternadas para melhor leitura */
-table.tabela-horario tr:nth-child(even) {
-  background-color: #f5f0fb;
+#banner {                   
+  width: 100%;              
+  height: 400px;
+  object-fit: cover;
+  display: block;
 }
 
-
-/* ============================= */
-/* COMPROVANTE DO PET            */
-/* ============================= */
-
-.comprovante {               /* Caixa do comprovante */
-  border: 2px solid purple;  /* Borda roxa */
-  padding: 20px;             /* Espaço interno */
-  margin-top: 20px;          /* Espaço acima */
-  background: white;         /* Fundo branco */
-  border-radius: 10px;       /* Cantos arredondados */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+.hero-texto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.titulo-comprovante {        /* Título do comprovante */
-  color: purple;             /* Cor roxa */
-  margin-top: 0;             /* Remove espaço acima */
+.hero-texto h2 {
+  font-size: 36px;
+  max-width: 500px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: var(--cor-primaria);
 }
 
-.botao-imprimir {            /* Botão de imprimir */
-  margin-top: 15px;          /* Espaço acima */
-  padding: 10px 20px;        /* Espaço interno */
-  background: #4a148c;       /* Fundo roxo */
-  color: white;              /* Texto branco */
-  border: none;              /* Remove borda padrão */
-  border-radius: 5px;        /* Cantos arredondados */
-  cursor: pointer;           /* Muda cursor para mão */
-  font-size: 16px;           /* Tamanho do texto */
+.hero-texto p {
+  font-size: 18px;
+  max-width: 400px;
+  color: var(--cor-texto);
 }
 
-.botao-imprimir:hover {      /* Efeito ao passar o mouse */
-  background: #6a1b9a;       /* Roxo mais claro */
+/* Cartões de Informação Genéricos */
+.cartao-info {
+  background-color: var(--cor-fundo-cartao);
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  border: 1px solid var(--cor-borda);
+}
+
+.cartao-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e6f6f7;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+/* Container de Seções Lado a Lado */
+.container-secoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Lista de Serviços */
+.lista-servicos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-servicos li {
+  padding: 12px 15px;
+  background-color: #f9fbfc;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.lista-servicos li span {
+  color: var(--cor-primaria);
+  font-size: 14px;
+}
+
+/* ===============================
+   TABELA DE HORÁRIOS
+   =============================== */
+.responsivo-tabela {
+  overflow-x: auto;
+}
+
+table.tabela-horario {              
+  width: 100%;                      
+  border-collapse: collapse;       
+  text-align: left;
+}
+
+table.tabela-horario th,
+table.tabela-horario td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+table.tabela-horario th {          
+  background-color: #f9fbfc;       
+  color: var(--cor-texto-titulo);                    
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+table.tabela-horario tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+table.tabela-horario tbody tr:hover {
+  background-color: #f3f9f9;
+}
+
+/* ===============================
+   FORMULÁRIOS
+   =============================== */
+.formulario-padrao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Faz o textarea ocupar as duas colunas */
+.grupo-campo:nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.formulario-padrao label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.formulario-padrao input,
+.formulario-padrao select,
+.formulario-padrao textarea,
+input#nome, input#email, input#whatsapp, input#nome_cachorro, select#porte_cachorro, textarea, input#data_nascimento, select#especie {                
+  width: 100%;               
+  padding: 14px 15px;            
+  font-size: 16px;          
+  border: 1px solid #d1d5db;   
+  border-radius: 8px;       
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  color: var(--cor-texto-titulo);
+}
+
+.formulario-padrao input:focus,
+.formulario-padrao select:focus,
+.formulario-padrao textarea:focus,
+input#nome:focus, input#email:focus, input#whatsapp:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(44, 171, 177, 0.2);
+}
+
+.botao-primario,
+input[type="submit"] {
+  grid-column: 1 / -1;
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+.botao-primario:hover,
+input[type="submit"]:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
+.botao-primario:active,
+input[type="submit"]:active {
+  transform: translateY(2px);
+}
+
+fieldset {                  
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;      
+  background: white;        
+  padding: 30px;            
+  max-width: 800px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+legend {                    
+  font-weight: bold;        
+  font-size: 20px;
+  padding: 5px 15px;          
+  color: white;           
+  background-color: var(--cor-primaria);
+  border-radius: 5px;
+}
+
+/* ===============================
+   COMPROVANTE
+   =============================== */
+.comprovante {               
+  border: none;  
+  padding: 35px;             
+  margin: 30px auto;
+  max-width: 600px;          
+  background: white;         
+  border-radius: 12px;       
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+}
+
+.titulo-comprovante {        
+  color: var(--cor-primaria);             
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: 800;             
+}
+
+.comprovante p {
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.comprovante hr {
+  border: 0;
+  height: 1px;
+  background: var(--cor-borda);
+  margin: 20px 0;
+}
+
+.botao-imprimir {            
+  margin-top: 25px;          
+  padding: 12px 25px;        
+  background: var(--cor-texto-titulo);       
+  color: white;              
+  border: none;              
+  border-radius: 8px;        
+  cursor: pointer;           
+  font-size: 16px;           
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.botao-imprimir:hover {      
+  background: #000;       
+}
+
+/* ===============================
+   RODAPÉ
+   =============================== */
+.rodape-site {
+  text-align: center; 
+  padding: 30px 20px; 
+  font-size: 14px;	
+  background-color: var(--cor-texto-titulo);
+  color: #9ca3af;
+  margin-top: 50px;
+}
+
+.rodape-site p {
+  margin: 0;
+}
+
+/* ===============================
+   RESPONSIVIDADE (MOBILE)
+   =============================== */
+@media (max-width: 900px) {
+  .container-secoes {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-cabecalho {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navegacao ul.menu {
+    justify-content: center;
+  }
+  
+  .hero-texto {
+    background: rgba(255,255,255,0.85); /* Fundo um pouco mais forte no mobile */
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .hero-texto h2 {
+    font-size: 28px;
+  }
+  
+  .formulario-padrao {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajusta o campo mensagem para 1 coluna */
+  .grupo-campo:nth-child(4) {
+    grid-column: auto;
+  }
+  
+  .botao-primario {
+    grid-column: auto;
+  }
+
+  table.tabela-horario th, table.tabela-horario td {
+    padding: 12px;
+  }
+  
+  fieldset {
+    padding: 20px;
+    margin: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-texto h2 {
+    font-size: 24px;
+  }
+  
+  .cartao-info {
+    padding: 20px;
+  }
 }

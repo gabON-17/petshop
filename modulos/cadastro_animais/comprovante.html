@@ -62,6 +62,9 @@
         let listaServicos = localStorage.getItem("listaServicos") || "Nenhum";
         // Recupera os serviços escolhidos
 
+        let dataNascimentoPet = localStorage.getItem("dataNascimentoPet") || "Não informado";
+        // Recupera a data de nascimento
+
         // ============================================================
         // 2. SELECIONANDO O ELEMENTO HTML
         // ============================================================
@@ -83,6 +86,10 @@
             <!-- Caixa principal do comprovante -->
             <div class="comprovante">
 
+                <p>
+                    <h1 class="logo">Portal Pet Shop</h1>
+                </p>
+
                 <!-- Título do comprovante -->
                 <h3 class="titulo-comprovante">
                     DADOS DO PET CADASTRADO
@@ -95,14 +102,16 @@
                 <p><strong>Nome:</strong> ${nomePet}</p>
                 <p><strong>Espécie:</strong> ${especiePet}</p>
                 <p><strong>Sexo:</strong> ${sexoPet}</p>
-                <p><strong>Serviços:</strong> ${listaServicos}</p>
+                <p><strong>Serviços selecionados:</strong> ${listaServicos}</p>
+                <p><strong>Data de nascimento:</strong> ${dataNascimentoPet}</p>
 
-                <!-- 
-                    Botão de impressão
-                    window.print() abre a tela de impressão do navegador
-                -->
+                <br>
                 <button onclick="window.print()" class="botao-imprimir">
-                    Imprimir Comprovante
+                    Imprimir Ficha Cadastral
+                </button>
+                <br><br>
+                <button onclick="window.history.back()" style="padding: 10px; cursor: pointer;">
+                    Voltar
                 </button>
 
             </div>

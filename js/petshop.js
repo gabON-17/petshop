@@ -31,6 +31,8 @@ function cadastrarPet() {
     sexoPet = opcaoSexo.value;
   }
 
+  // Pega a data de nascimento
+  let dataNascimentoPet = document.getElementById("data_nascimento").value;
 
   // ==============================
   // 3) PEGAR OS SERVIÇOS MARCADOS
@@ -50,7 +52,7 @@ function cadastrarPet() {
     let nomeServico = servicosSelecionados[cont].value;
 
     // Junta (concatena) esse valor na variável listaServicos
-    listaServicos += nomeServico + " ";
+    listaServicos += "<li>" + nomeServico + "</li>";
   }
 
 
@@ -62,8 +64,8 @@ function cadastrarPet() {
   localStorage.setItem("nomePet", nomePet);
   localStorage.setItem("especiePet", especiePet);
   localStorage.setItem("sexoPet", sexoPet);
-  localStorage.setItem("listaServicos", listaServicos);
-
+  localStorage.setItem("listaServicos", "<ul>" + listaServicos + "</ul>");
+localStorage.setItem("dataNascimentoPet", dataNascimentoPet);
 
   // ==============================
   // 5) ABRIR A PÁGINA DO COMPROVANTE

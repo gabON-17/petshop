@@ -7,24 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../../css/estilo_petshop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
     <script src="../../js/petshop.js"></script>
     <title>Calculadora de Ração</title>
 </head>
 
 <body>
 
-    <h2>CALCULADORA DE RAÇÃO</h2>
+    <header class="cabecalho-site">
+        <div class="container-cabecalho">
+            <h1 class="logo">Portal Pet Shop</h1>
+            <nav class="navegacao">
+                <ul class="menu">
+                    <li><a href="../../index.html">Página Inicial</a></li>
+                    <li><a href="../cadastro_animais/index.html">Cadastro de Animais</a></li>
+                    <li><a href="../calculadora_racao/index.html" class="ativo">Calculadora de Ração</a></li>
+                    <li><a href="../../index.html#servicos">Serviços</a></li>
+                    <li><a href="../../index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <ul class="menu">
-        <li><a href="../../conteudo.html" target="principal">PÁGINA INICIAL</a></li>
-    </ul>
-
-    <fieldset>
-        <legend><strong>INFORMAÇÕES DO CACHORRO</strong></legend>
+    <fieldset style="margin-top:20px; box-sizing:border-box;">
+        <legend><strong>DADOS DO PET</strong></legend>
 
         <form onsubmit="calcularRacao(); return false;">
 
-            <label><strong>Nome do Cachorro:</strong></label><br>
+            <label><strong>Nome do Animal:</strong></label><br>
             <input type="text" id="nome_cachorro" style="width: 98%; padding: 10px;" required><br><br>
 
             <label><strong>Porte:</strong></label><br>
@@ -48,7 +59,7 @@
 
     <div id="resultado" style="margin-top: 20px; min-height: 50px;"></div>
 
-    <footer id="rodape">
+    <footer id="rodape" class="rodape-site">
         <p>© 2026 - Portal Pet Shop | Desenvolvido para fins educacionais</p>
     </footer>
 

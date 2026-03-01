@@ -1,36 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-             <meta charset="UTF-8">
-	           <meta name="author" content="Wanderley Lopes Batista">    
-             <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-  
-  <title>Pet Shop - Sistema Principal</title>
-  
-  <style>
-    
-body {                 /* Seletor que seleciona a tag <body> */
-  margin: 0;                /* Remove a margem padrão do navegador */
-  padding: 0;               /* Remove o espaçamento interno padrão */
-  height: 100%;             /* Faz o body/html ocuparem 100% da altura da tela */
-  overflow: hidden;         /* Esconde qualquer conteúdo que ultrapasse a tela */
-}
-
-/* Estilo do iframe (área onde outra página é exibida) */
-iframe {                    /* Seletor que seleciona a tag <iframe> */
-  width: 100%;              /* O iframe ocupa 100% da largura da tela */
-  height: 100vh;            /* O iframe ocupa 100% da altura visível da tela */
-  border: none;             /* Remove a borda padrão do iframe */
-}
-
-  </style>
+  <meta charset="UTF-8">
+  <meta name="author" content="Wanderley Lopes Batista">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Pet Shop - Institucional</title>
+  <link rel="stylesheet" href="css/estilo_petshop.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <iframe 
-    name="principal" src="conteudo.html">
-   
-  </iframe>
+  <header class="cabecalho-site">
+    <div class="container-cabecalho">
+      <h1 class="logo">Portal Pet Shop</h1>
+      <nav class="navegacao">
+        <ul class="menu">
+          <li><a href="index.html" class="ativo">Página Inicial</a></li>
+          <li><a href="modulos/cadastro_animais/index.html">Cadastro de Animais</a></li>
+          <li><a href="modulos/calculadora_racao/index.html">Calculadora de Ração</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteudo-principal">
+    <section class="secao-hero">
+      <img id="banner" src="imagem/banner.png" alt="Imagem de um cachorro para o banner do Pet Shop">
+      <div class="hero-texto">
+        <h2>Cuidando do seu melhor amigo com amor e dedicação!</h2>
+        <p>A melhor estrutura e profissionais para atender o seu pet.</p>
+      </div>
+    </section>
+
+    <div class="container-secoes">
+      <section class="cartao-info cuidados">
+        <h3>🐾 Nossos Cuidados</h3>
+        <p>Oferecemos o melhor para o seu animal de estimação em todas as etapas da vida.</p>
+        <p>Nossos profissionais são treinados em comportamento animal positivo.</p>
+        <p>Utilizamos produtos de higiene dermatologicamente testados.</p>
+        <p>O ambiente é climatizado para garantir o conforto térmico do pet.</p>
+        <p>Venha nos visitar e comprove o nosso padrão de qualidade superior.</p>
+      </section>
+
+      <section class="cartao-info servicos-lista" id="servicos">
+        <h3>🛁 Serviços Oferecidos</h3>
+        <ul class="lista-servicos">
+          <li><span>✔</span> Banho e Tosa</li>
+          <li><span>✔</span> Consulta Veterinária</li>
+          <li><span>✔</span> Vacinação</li>
+          <li><span>✔</span> Hospedagem</li>
+          <li><span>✔</span> Adestramento</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="cartao-info horarios-atendimento">
+      <h3>⏰ Horário de Funcionamento</h3>
+      <div class="responsivo-tabela">
+        <table class="tabela-horario">
+          <thead>
+            <tr>
+              <th>Dia da Semana</th>
+              <th>Horário de Atendimento</th>
+              <th>Observações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Segunda a Sexta</td>
+              <td>08:00 às 18:00</td>
+              <td>Atendimento normal</td>
+            </tr>
+            <tr>
+              <td>Sábado</td>
+              <td>08:00 às 14:00</td>
+              <td>Horário reduzido</td>
+            </tr>
+            <tr>
+              <td>Domingo</td>
+              <td>Fechado</td>
+              <td>Apenas emergências</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cartao-info secao-contato" id="contato">
+      <h3>📩 Fale Conosco</h3>
+      <form class="formulario-padrao" onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+        <div class="grupo-campo">
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="email">E-mail Corporativo/Pessoal:</label>
+          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="whatsapp">Telefone WhatsApp:</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 90000-0000" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="mensagem">Como podemos ajudar?</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..."
+            required></textarea>
+        </div>
+
+        <button type="submit" class="botao-primario">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="rodape" class="rodape-site">
+    <p>© 2026 - Portal Pet Shop | Cuidado real para amigos leais.</p>
+  </footer>
 
 </body>
+
 </html>

@@ -24,10 +24,17 @@
 
         areaResultado.innerHTML = `
             <div class="comprovante">
+
+                <p>
+                    <h1 class="logo">Portal Pet Shop</h1>
+                </p>
+
                 <h3 class="titulo-comprovante">
                     QUANTIDADE DE RAÇÃO RECOMENDADA
                 </h3>
+
                 <hr>
+                
                 <p><strong>Nome do Pet:</strong> ${nomeCachorro}</p>
                 <p><strong>Porte:</strong> ${porteCachorro}</p>
                 <p><strong>Fase da Vida:</strong> ${idadeCachorro}</p>
@@ -40,7 +47,7 @@
                 </button>
                 <br><br>
                 <button onclick="window.history.back()" style="padding: 10px; cursor: pointer;">
-                    Voltar para a Calculadora
+                    Voltar
                 </button>
             </div>
         `;
