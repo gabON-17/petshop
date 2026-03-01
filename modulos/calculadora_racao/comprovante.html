@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Wanderley Lopes Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/estilo_petshop.css">
+    <title>Recomendação de Ração</title>
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+        let nomeCachorro = localStorage.getItem("nomeCachorro") || "Não informado";
+        let porteCachorro = localStorage.getItem("porteCachorro") || "Não informado";
+        let idadeCachorro = localStorage.getItem("idadeCachorro") || "Não informado";
+        let quantidadeDiaria = localStorage.getItem("quantidadeDiaria") || "Não calculada";
+
+        let areaResultado = document.getElementById("resultado");
+
+        areaResultado.innerHTML = `
+            <div class="comprovante">
+
+                <p>
+                    <h1 class="logo">Portal Pet Shop</h1>
+                </p>
+
+                <h3 class="titulo-comprovante">
+                    QUANTIDADE DE RAÇÃO RECOMENDADA
+                </h3>
+
+                <hr>
+                
+                <p><strong>Nome do Pet:</strong> ${nomeCachorro}</p>
+                <p><strong>Porte:</strong> ${porteCachorro}</p>
+                <p><strong>Fase da Vida:</strong> ${idadeCachorro}</p>
+                <hr>
+                <p style="font-size: 1.2em; color: #333;"><strong>Quantidade Diária Recomendada:</strong><br><br> <span style="color: #d9534f; font-size: 1.5em; font-weight: bold;">${quantidadeDiaria}</span></p>
+
+                <br>
+                <button onclick="window.print()" class="botao-imprimir">
+                    Imprimir Recomendação
+                </button>
+                <br><br>
+                <button onclick="window.history.back()" style="padding: 10px; cursor: pointer;">
+                    Voltar
+                </button>
+            </div>
+        `;
+    </script>
+</body>
+
+</html>

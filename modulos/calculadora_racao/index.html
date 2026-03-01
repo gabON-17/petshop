@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Wanderley Lopes Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/estilo_petshop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="../../js/petshop.js"></script>
+    <title>Calculadora de Ração</title>
+</head>
+
+<body>
+
+    <header class="cabecalho-site">
+        <div class="container-cabecalho">
+            <h1 class="logo">Portal Pet Shop</h1>
+            <nav class="navegacao">
+                <ul class="menu">
+                    <li><a href="../../index.html">Página Inicial</a></li>
+                    <li><a href="../cadastro_animais/index.html">Cadastro de Animais</a></li>
+                    <li><a href="../calculadora_racao/index.html" class="ativo">Calculadora de Ração</a></li>
+                    <li><a href="../../index.html#servicos">Serviços</a></li>
+                    <li><a href="../../index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <fieldset style="margin-top:20px; box-sizing:border-box;">
+        <legend><strong>DADOS DO PET</strong></legend>
+
+        <form onsubmit="calcularRacao(); return false;">
+
+            <label><strong>Nome do Animal:</strong></label><br>
+            <input type="text" id="nome_cachorro" style="width: 98%; padding: 10px;" required><br><br>
+
+            <label><strong>Porte:</strong></label><br>
+            <select id="porte_cachorro" required>
+                <option value="">Selecione o porte...</option>
+                <option value="Miniatura (até 5kg)">Miniatura (até 5kg) - ex: Pinscher, Chihuahua</option>
+                <option value="Pequeno (5kg a 10kg)">Pequeno (5kg a 10kg) - ex: Shih Tzu, Poodle Toy</option>
+                <option value="Médio (11kg a 25kg)">Médio (11kg a 25kg) - ex: Beagle, Bulldog Francês</option>
+                <option value="Grande (26kg a 44kg)">Grande (26kg a 44kg) - ex: Golden Retriever, Pastor Alemão</option>
+                <option value="Gigante (45kg ou mais)">Gigante (45kg ou mais) - ex: Dogue Alemão, São Bernardo</option>
+            </select><br><br>
+
+            <label><strong>Idade / Fase da Vida:</strong></label><br>
+            <input type="radio" name="idade_cachorro" value="Filhote" required> Filhote (Até 1 ano)
+            <input type="radio" name="idade_cachorro" value="Adulto"> Adulto (1 a 7 anos)
+            <input type="radio" name="idade_cachorro" value="Sênior"> Sênior (Acima de 7 anos)<br><br>
+
+            <input type="submit" value="CALCULAR RECOMENDAÇÃO" style="padding: 10px 20px; cursor: pointer;">
+        </form>
+    </fieldset>
+
+    <div id="resultado" style="margin-top: 20px; min-height: 50px;"></div>
+
+    <footer id="rodape" class="rodape-site">
+        <p>© 2026 - Portal Pet Shop | Desenvolvido para fins educacionais</p>
+    </footer>
+
+</body>
+
+</html>

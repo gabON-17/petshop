@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-               <meta charset="UTF-8">
-	           <meta name="author" content="Wanderley Lopes Batista">    
-               <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-			   
-    <link rel="stylesheet" href="css/estilo_petshop.css">
-    <script src="js/petshop.js"></script>
+    <meta charset="UTF-8">
+    <meta name="author" content="Wanderley Lopes Batista">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/estilo_petshop.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="../../js/petshop.js"></script>
 
 </head>
+
 <body>
 
-    <h2>CADASTRO DE ANIMAIS</h2>
+    <header class="cabecalho-site">
+        <div class="container-cabecalho">
+        <h1 class="logo">Portal Pet Shop</h1>
+        <nav class="navegacao">
+            <ul class="menu">
+            <li><a href="../../index.html" >Página Inicial</a></li>
+            <li><a href="../cadastro_animais/index.html" class="ativo">Cadastro de Animais</a></li>
+            <li><a href="../calculadora_racao/index.html">Calculadora de Ração</a></li>
+            <li><a href="../../index.html#servicos">Serviços</a></li>
+            <li><a href="../../index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
 
-    <ul class="menu">
-        <li><a href="conteudo.html" target="principal">PÁGINA INICIAL</a></li>
-        <li><a href="cadastro_animais.html" target="principal">CADASTRO DE ANIMAIS</a></li>
-    </ul>
-
-    <fieldset>
+    <fieldset style="margin-top:20px; box-sizing:border-box;">
         <legend><strong>DADOS DO PET</strong></legend>
 
         <form onsubmit="cadastrarPet(); return false;">
@@ -49,21 +61,22 @@
             <input type="checkbox" class="serv" value="Consulta"> Consulta Veterinária
             <input type="checkbox" class="serv" value="Vacinacao"> Vacinação
             <input type="checkbox" class="serv" value="Hospedagem"> Hospedagem<br><br>
-            
-            <label><strong>Data:</strong></label><br>
-            <input type="date" id="data"><br><br>
+
+            <label><strong>Data de nascimento:</strong></label><br>
+            <input type="date" name="data_nascimento" id="data_nascimento"><br><br>
 
             <input type="submit" value="CADASTRAR PET" style="padding: 10px 20px; cursor: pointer;">
         </form>
     </fieldset>
 
     <div id="resultado" style="margin-top: 20px; min-height: 50px;"></div>
-	
-<!-- Rodapé da página -->
-  <footer id="rodape">
-    <!-- Texto de direitos autorais -->
-    <p>© 2026 - Portal Pet Shop | Desenvolvido para fins educacionais</p>
-  </footer>	
+
+    <!-- Rodapé da página -->
+    <footer id="rodape" class="rodape-site">
+        <!-- Texto de direitos autorais -->
+        <p>© 2026 - Portal Pet Shop | Desenvolvido para fins educacionais</p>
+    </footer>
 
 </body>
+
 </html>
