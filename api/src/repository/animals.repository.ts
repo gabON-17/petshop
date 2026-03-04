@@ -18,4 +18,16 @@ export class AnimalsRepository {
     findAll(): AnimalEntity[] {
         return this.animals
     }
+
+    findOne(name?: string | undefined, id?: number | undefined): AnimalEntity | undefined {
+        let animal: AnimalEntity | undefined
+
+        if (name) {
+            animal = this.animals.find((value, index) => value.name = name)
+        } else {
+            animal = this.animals.find((value) => value.id = id!);
+        }
+
+        return animal
+    }
 }

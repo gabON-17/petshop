@@ -12,6 +12,10 @@ export class AnimalsRouter {
             this.animalsController.findAll(req, res);
         })
 
+        this.router.get('/find', (req, res) => {
+            this.animalsController.findAll(req, res);
+        })
+
         this.router.post('/', (req, res) => {
             this.animalsController.create(req, res);
         })

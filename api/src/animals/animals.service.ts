@@ -12,6 +12,19 @@ export class AnimalsService {
         return animals;
     }
 
+    findOne(name?: string, id?: number): AnimalEntity | undefined {
+        let animal: AnimalEntity | undefined
+        if (name) {
+            animal = this.animalsRepository.findOne(name)
+        } else if (id) {
+            animal = this.animalsRepository.findOne(undefined, id)
+        }
+        
+        if(animal) return animal;
+
+        return undefined
+    }
+
     create(animal: AnimalCreateDto) {
         const animalCreate = this.animalsRepository.create(animal);
         return animalCreate;
